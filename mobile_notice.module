@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Load up needed JS and CSS.
+ */
+function mobile_notice_init(){
+  drupal_add_css(drupal_get_path('module', 'mobile_notice')  . '/mobile_notice.css');
+  drupal_add_js(drupal_get_path('module', 'mobile_notice')  . '/mobile_notice.js');
+}
+
+/**
+ * Add makrup for the mobile notice.
+ **/
+function mobile_notice_page_build(&$page) {
+
+  global $user;
+  
+  if ($user->uid != 1) {
+    $page['footer']['#sorted'] = FALSE;
+      
+    $page['footer']['mobilenotice'] = array(
+      '#markup' => '<div id="mobilenotice">
+                      <span class="side sp_left">
+                        <h4>' . t('What a nice big screen you have!') . '</h4>' .
+                        t('BahnSharing was designed for mobile devices.') .
+                        '<div class="small">' .
+                        t('Hint: Maybe make your browser window smaller') .
+                        '</div>' .
+                      '</span>
+                          
+                    </div>', 
+        '#weight' => 25, 
+      );
+  }   
+}

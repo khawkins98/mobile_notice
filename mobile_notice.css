@@ -1,0 +1,34 @@
+/** using css3 transforms for performance
+    http://coenraets.org/blog/2013/03/hardware-accelerated-page-transitions-for-mobile-web-apps-phonegap-apps/
+    **/
+#mobilenotice {
+  position: fixed;
+  /* start it at 100% for compatibility */
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(0,100%);
+  -ms-transform: translate(0,100%); /* IE 9 */
+  -webkit-transform: translate(0,100%); /* Safari and Chrome */
+  -webkit-transition-duration: .25s;
+  transition-duration: .25s;
+
+  color: #FFF;
+  background: #ff0e10;
+  text-align: center;
+  padding: 10% 0;
+  font-size: .7em;  
+
+}
+
+#mobilenotice.transition { 
+  -webkit-transition-duration: .25s;
+  transition-duration: .25s;
+}
+
+#mobilenotice.active { 
+  transform: translate(0,0);
+  -ms-transform: translate(0,0); /* IE 9 */
+  -webkit-transform: translate(0,0); /* Safari and Chrome */
+}
