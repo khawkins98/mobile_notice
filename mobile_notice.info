@@ -1,7 +1,7 @@
 name = Mobile Notice
 description = A simple JS detect that shows a notice to use the mobile app on a mobile-sized screen.
+package = User interface
 core = 7.x
 
 version = "7.x-1.x-dev"
-core = "7.x"
 

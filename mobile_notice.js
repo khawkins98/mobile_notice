@@ -1,8 +1,5 @@
-
+// Add an overlay on desktop-sized screens telling folks to use a mobile device
 jQuery(document).ready(function ($) {
-
-  // Add an overlay on desktop-sized screens telling folks to use a mobile device
-
   checkScreen();
 
   $(window).resize(function() {
